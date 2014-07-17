@@ -1,0 +1,14 @@
+<template name="dashboard">
+	{{> header}}
+	<div class="">
+		<h1>Hello Dashboard</h1>
+	</div>
+	<div class="">
+		<h2>Here Are Your Strings</h2>
+		<ul>
+			{{#each string}}
+				{{> stringItem}}
+			{{/each}}
+		</ul>
+	</div>
+</template>
