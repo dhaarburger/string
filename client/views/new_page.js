@@ -14,6 +14,9 @@ Template.newPage.events({
 			if(error){
 				Errors.throw(error.reason);
 				if (error.error === 302) Router.go('dashboard');
+			} else{
+				$(e.target).find('[name=url]').val('');
+				$(e.target).find('[name=title]').val('');
 			}
 			// else Router.go('pageDetail', {_id:id});
 		});
