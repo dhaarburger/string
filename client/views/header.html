@@ -1,5 +1,13 @@
 <template name="header">
-	<div class="head nav" style="background-color: #ddd;">
+	<!-- <div class="head nav" style="background-color: #ddd;">
 		This is the header
+	</div> -->
+	<header class="navbar">
+	<div class="nav-collapse collapse">
+		<ul class="nav pull-right">
+			<li>{{> loginButtons}}</li>
+		</ul>
 	</div>
+	{{> newString}}
+	</header>
 </template>

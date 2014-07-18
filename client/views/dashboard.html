@@ -5,8 +5,21 @@
 	</div>
 	<div class="">
 		<h2>Here Are Your Strings</h2>
+		{{#if hasStrings}}
 		<ul>
 			{{#each string}}
+				{{> stringItem}}
+			{{/each}}
+		</ul>
+		{{else}}
+		<p>Sorry, you have no strings</p>
+		{{/if}}
+	</div>
+
+	<div class="" style="opacity: 0.5;">
+		<h2>Here Are Other People's Strings</h2>
+		<ul>
+			{{#each stringsOfOthers}}
 				{{> stringItem}}
 			{{/each}}
 		</ul>
