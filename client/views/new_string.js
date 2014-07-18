@@ -13,7 +13,7 @@ Template.newString.events({
 	        Errors.throw(error.reason);
 	        if (error.error === 302) Router.go('dashboard');
 	      }
-	      else Router.go('stringDetail', {_id:id});
+	      else Router.go('pageDetail', {stringId:id});
 	    });
 
 	}

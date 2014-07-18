@@ -21,6 +21,10 @@ Template.stringDetail.helpers({
   		console.log('could not find page id');
   		return false;
   	}
+  },
+  comments: function(){
+    return Comments.find({pageId: Router.current().params.pageId});
+    // return Comments.find();
   }
 
 });
