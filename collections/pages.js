@@ -3,13 +3,14 @@ Pages = new Meteor.Collection('pages');
 Meteor.methods({
 	newPage: function(postAttributes, stringId) {
     var user = Meteor.user();
-    var string = Strings.find({_id: stringId}); 
+    var string = Strings.findOne({_id: stringId}); 
+    console.log("in NewPage: stringId:" + stringId + " stringId.userId:" + stringId.userId +" userId:" + user._id);
     if (!string) Meteor.Error(401, "There is no string with that id");
     // ensure the user is logged in
     if (!user)
       throw new Meteor.Error(401, "You need to login to post new pages");
 
-    if (user !== string.userId)
+    if (user._id !== string.userId)
       throw new Meteor.Error(401, "You don't have the permissions to post to this string");
     
     // ensure the post has a title
