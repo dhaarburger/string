@@ -10,7 +10,7 @@ Template.newPage.events({
 	      	stringId: template.data._id,
 		}
 
-		Meteor.call('newPage', page, function(error, id){
+		Meteor.call('newPage', page, template.data._id, function(error, id){
 			if(error){
 				Errors.throw(error.reason);
 				if (error.error === 302) Router.go('dashboard');

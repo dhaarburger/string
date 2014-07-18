@@ -1,11 +1,16 @@
 Pages = new Meteor.Collection('pages');
 
 Meteor.methods({
-	newPage: function(postAttributes) {
-    var user = Meteor.user();    
+	newPage: function(postAttributes, stringId) {
+    var user = Meteor.user();
+    var string = Strings.find({_id: stringId}); 
+    if (!string) Meteor.Error(401, "There is no string with that id");
     // ensure the user is logged in
     if (!user)
       throw new Meteor.Error(401, "You need to login to post new pages");
+
+    if (user !== string.userId)
+      throw new Meteor.Error(401, "You don't have the permissions to post to this string");
     
     // ensure the post has a title
     if (!postAttributes.title)
@@ -13,8 +18,8 @@ Meteor.methods({
 
   	if (!postAttributes.url)
   		throw new Meteor.Error(422, 'Please enter a url');
-    
-    
+
+    if (stringId)    
     // pick out the whitelisted keys
     var page = _.extend(_.pick(postAttributes, 'url', 'title', 'stringId'), {
       authorId: user._id, 
