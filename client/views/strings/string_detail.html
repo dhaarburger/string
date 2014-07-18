@@ -1,0 +1,36 @@
+<template name="stringDetail">
+	{{> header}}
+	<button class="btn btn-primary" onclick="toggleVisible(newPageWrapper)">New Page</button>
+	<div id="newPageWrapper">
+	{{> newPage}}
+	</div>
+	
+	<h1>This is a String Detail</h1>
+	<h2>{{title}}</h2>
+	<p>{{description}}</p>
+	<p>{{url}}</p>
+	<!-- {{#if }} -->
+	<!-- <p>Page Id: {{pageId}}</p> -->
+	<hr>
+	<hr>
+	<h2>All Pages</h2>
+	{{#each pages}}
+		{{#if activePage}}
+			<b>{{> pageEntry}}</b>
+			<p>Page Comments</p>
+			{{#each comments}}
+				{{> commentEntry}}
+			{{/each}}
+			{{> commentSubmit}}
+		{{else}}
+			{{> pageEntry}}
+		{{/if}}
+	{{/each}}
+
+	<script>
+function toggleVisible(objectId){
+  $(objectId).toggleClass( "hidden" );
+}
+	</script>
+</template>
+

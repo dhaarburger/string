@@ -18,7 +18,6 @@ Meteor.methods({
     });
     
     var stringId = Strings.insert(string);
-    
     return stringId;
   },
 });
