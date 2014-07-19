@@ -13,7 +13,7 @@ Meteor.methods({
     
     
     // pick out the whitelisted keys
-    var string = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), {
+    var string = _.extend(_.pick(postAttributes, 'title', 'description'), {
       userId: user._id, 
     });
     

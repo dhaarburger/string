@@ -1,14 +1,7 @@
 <template name="newPage">
-	<h2>Here is Where You Make A New Page</h2>
 
 	<form class="main">
-    <div class="control-group">
-        <label class="control-label" for="url">URL</label>
-        <div class="controls">
-            <input name="url" type="text" value="" placeholder="Your URL"/>
-        </div>
-    </div>
-
+    <br>
     <div class="control-group">
         <label class="control-label" for="title">Title</label>
         <div class="controls">
@@ -16,11 +9,26 @@
         </div>
     </div>
 
+
     <div class="control-group">
+        <label class="control-label" for="url">URL</label>
         <div class="controls">
-            <input type="submit" value="Submit" class="btn btn-primary"/>
+            <input name="url" type="text" value="" placeholder="Your URL"/>
         </div>
     </div>
+
+    <div class="btn-group">
+        <div class="controls">
+            <button type="close" class="btn btn-default" onclick="toggleVisible(newPageWrapper)">Cancel</button>
+        </div>
+    </div>
+   
+    <div class="btn-group">
+        <div class="controls">
+            <input type="submit" value="Submit" class="btn btn-primary" onclick="toggleVisible(newPageWrapper)"/>
+        </div>
+    </div>
+    
   </form>
 
 </template>

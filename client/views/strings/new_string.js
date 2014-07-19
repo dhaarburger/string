@@ -3,7 +3,7 @@ Template.newString.events({
 		e.preventDefault();
 
 		var string = {
-	      url: $(e.target).find('[name=url]').val(),
+	      // url: $(e.target).find('[name=url]').val(),
 	      title: $(e.target).find('[name=title]').val(),
 	      description: $(e.target).find('[name=message]').val()
 	    }

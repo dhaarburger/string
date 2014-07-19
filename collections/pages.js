@@ -31,4 +31,7 @@ Meteor.methods({
     
     return pageId;
   },
+  toggleVisible: function(objectId){
+      $(objectId).toggleClass( "hidden" );
+    }
 });

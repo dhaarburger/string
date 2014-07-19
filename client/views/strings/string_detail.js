@@ -35,6 +35,5 @@ Template.stringDetail.rendered = function(){
 
 };
 
-function toggleVisible(objectId){
-  $(objectId).toggleClass( "hidden" );
-}
+
+
